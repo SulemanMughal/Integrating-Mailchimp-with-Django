@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Django + Mailchimp</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1>Unsubscribe</h1>
+            <p>Enter your email address to unsubscribe from our mailing list.</p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-danger">Unsubscribe</button>
+            </form>
+            <p class="mt-2"><a href="{% url "subscribe" %}">Subscribe form</a></p>
+        </div>
+    </body>
+</html>
